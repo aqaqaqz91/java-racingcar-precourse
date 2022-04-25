@@ -27,4 +27,9 @@ public class RacingGameUi {
         }
         printEmptyLine();
     }
+
+    public static void printWinner(String name){
+        System.out.print(Message.RACING_WINNER_MSG);
+        System.out.println(name);
+    }
 }

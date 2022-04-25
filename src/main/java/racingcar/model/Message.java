@@ -3,6 +3,8 @@ package racingcar.model;
 public class Message {
     public static final String SPLIT = ",";
     public static final String SPLIT_NAME = "쉼표";
+    public static final String CAR_POSITION_CHAR = "-";
+    public static final String NAME_AND_POS_SEPARATOR = " : ";
 
     public static final String ERROR = "[ERROR]";
     public static final String ERROR_NAME_LEN_OVER = "이름의 길이는 최대 "+Rule.CAR_NAME_MAX_LEN+"글자 입니다";
@@ -13,7 +15,5 @@ public class Message {
     public static final String CAR_NAME_INPUT = "경주 할 자동차 이름(이름은 "+SPLIT_NAME+"("+SPLIT+") 기준으로 구분)";
     public static final String RACING_LAPS_INPUT = "시도할 회수는 몇회인가요?";
     public static final String RACING_RESULT_MSG = "실행 결과";
-
-    public static final String CAR_POSITION_CHAR = "-";
-    public static final String NAME_AND_POS_SEPARATOR = " : ";
+    public static final String RACING_WINNER_MSG = "최종 우승자: ";
 }

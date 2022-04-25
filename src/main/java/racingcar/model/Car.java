@@ -27,6 +27,10 @@ public class Car {
         return name;
     }
 
+    public int getPos(){
+        return pos;
+    }
+
     public void move() {
         int next = pickNumberInRange(Rule.RAND_RANGE_MIN, Rule.RAND_RANGE_MAX);
         if(next >= Rule.CAR_MOVE_STAND){

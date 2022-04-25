@@ -11,9 +11,14 @@ public class RacingGameController {
 
     public void start(){
         racingInfo =  new RacingInfo();
-        initUserInput();
 
-        racingInfo.racingStart();
+        initUserInput();
+        RacingGameUi.printRacingResultMsg();
+        while(!racingInfo.isEnd()){
+            racingInfo.racing();
+        }
+
+        RacingGameUi.printWinner(racingInfo.getHeadCarName());
     }
 
     private void initUserInput(){
