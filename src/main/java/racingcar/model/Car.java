@@ -12,10 +12,10 @@ public class Car {
 
     private void checkNameValidation(){
         if(this.name.length() > Rule.CAR_NAME_MAX_LEN)
-            throw new UserInputException("자동차 이름길이 오류");
+            throw new UserInputException(Message.ERROR_NAME_LEN_OVER);
 
         if("".equals(this.name))
-            throw new UserInputException("자동차 이름은 공백이 불가능합니다");
+            throw new UserInputException(Message.ERROR_NAME_USE_NOT_SPACE);
     }
 
     public String getName(){
