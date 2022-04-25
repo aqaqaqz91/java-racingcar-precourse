@@ -21,7 +21,7 @@ public class RacingGameUi {
 
     public static void printCarNameAndPosition(String name, int pos) {
         System.out.print(name);
-        System.out.print(" : ");
+        System.out.print(Message.NAME_AND_POS_SEPARATOR);
         for(int i=0;i<pos;i++){
             System.out.print(Message.CAR_POSITION_CHAR);
         }

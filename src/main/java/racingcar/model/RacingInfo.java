@@ -10,12 +10,8 @@ public class RacingInfo {
     private List<Car> carList = new ArrayList();
     private int laps = 0;
 
-    public List<Car> getCarList() {
-        return this.carList;
-    }
-
     public void setCarList(String nameList){
-        for(String name : nameList.split(Rule.SPLIT))
+        for(String name : nameList.split(Message.SPLIT))
             carList.add(new Car(name));
     }
 
@@ -36,14 +32,13 @@ public class RacingInfo {
     }
 
     private void racing(){
-        this.laps--;
-
         for(Car c : carList){
             c.move();
             c.printPosition();
         }
         RacingGameUi.printEmptyLine();
 
-        if(laps > 0) racing();
+        if(--laps > 0)
+            racing();
     }
 }

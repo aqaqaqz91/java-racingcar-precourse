@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import racingcar.model.Rule;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
-import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class RacingTest extends NsTest {
@@ -13,10 +12,14 @@ class RacingTest extends NsTest {
     void 이동_테스트() {
         assertRandomNumberInRangeTest(
             () -> {
-                run("1,2", "1");
-                assertThat(output()).contains("1 : ", "2 : -");
+                run("1,2", "2");
+                assertThat(output()).contains(
+                        "1 : ", "2 : -",
+                        "1 : -", "2 : --"
+                );
             },
-            Rule.CAR_STOP_STAND, Rule.CAR_MOVE_STAND
+            Rule.CAR_STOP_STAND, Rule.CAR_MOVE_STAND,
+            Rule.CAR_MOVE_STAND, Rule.CAR_MOVE_STAND
         );
     }
 
