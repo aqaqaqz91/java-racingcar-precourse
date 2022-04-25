@@ -7,22 +7,21 @@ import java.util.List;
 
 public class RacingInfo {
     private List<Car> carList = new ArrayList();
-    private int loopCnt = 0;
-
+    private int laps = 0;
 
     public void setCarList(String nameList){
         for(String name : nameList.split(Rule.SPLIT))
             carList.add(new Car(name));
     }
 
-    public void setLoopCnt(String cnt){
+    public void setLaps(String cnt){
         try{
-            loopCnt = Integer.parseInt(cnt);
+            laps = Integer.parseInt(cnt);
         }catch(NumberFormatException e){
-            throw new UserInputException(Message.ERROR_LOOP_CNT_DIGIT);
+            throw new UserInputException(Message.ERROR_LAPS_ONLY_DIGIT);
         }
 
-        if(loopCnt <= 0)
-            throw new UserInputException(Message.ERROR_LOOP_CNT_NOT_NEGATIVE);
+        if(laps <= 0)
+            throw new UserInputException(Message.ERROR_LAPS_NOT_NEGATIVE);
     }
 }

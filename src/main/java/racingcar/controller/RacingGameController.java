@@ -11,8 +11,12 @@ public class RacingGameController {
 
     public void start(){
         racingInfo =  new RacingInfo();
+        initUserInput();
+    }
+
+    private void initUserInput(){
         inputCarName();
-        inputLoopCnt();
+        inputLabs();
     }
 
     private void inputCarName(){
@@ -25,13 +29,13 @@ public class RacingGameController {
         }
     }
 
-    private void inputLoopCnt(){
-        RacingGameUi.printLoopCntInputMsg();
+    private void inputLabs(){
+        RacingGameUi.printLapsInputMsg();
 
         try{
-            racingInfo.setLoopCnt(readLine());
+            racingInfo.setLaps(readLine());
         }catch(UserInputException e){
-            inputLoopCnt();
+            inputLabs();
         }
     }
 }
