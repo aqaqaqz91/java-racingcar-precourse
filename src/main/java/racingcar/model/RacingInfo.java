@@ -19,6 +19,7 @@ public class RacingInfo {
     }
 
     public void setCarList(String nameList){
+        carList.clear();
         for(String name : nameList.split(Message.SPLIT))
             carList.add(new Car(name));
     }
