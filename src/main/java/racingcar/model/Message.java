@@ -8,5 +8,8 @@ public class Message {
     public static final String ERROR_LAPS_NOT_NEGATIVE = "시도 횟수는 0보다 큰 숫자여야 합니다";
 
     public static final String CAR_NAME_INPUT = "경주 할 자동차 이름(이름은 "+Rule.SPLIT_NAME+"("+Rule.SPLIT+") 기준으로 구분)";
-    public static final String RACING_LAPS_INPUT = "시도할 회수";
+    public static final String RACING_LAPS_INPUT = "시도할 회수는 몇회인가요?";
+    public static final String RACING_RESULT_MSG = "실행 결과";
+
+    public static final String CAR_POSITION_CHAR = "-";
 }

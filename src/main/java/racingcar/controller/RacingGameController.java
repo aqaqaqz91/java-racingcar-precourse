@@ -12,6 +12,8 @@ public class RacingGameController {
     public void start(){
         racingInfo =  new RacingInfo();
         initUserInput();
+
+        racingInfo.racingStart();
     }
 
     private void initUserInput(){
