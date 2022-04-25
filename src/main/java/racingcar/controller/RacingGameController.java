@@ -2,6 +2,7 @@ package racingcar.controller;
 
 import racingcar.exception.UserInputException;
 import racingcar.model.RacingInfo;
+import racingcar.view.RacingGameUi;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
@@ -15,6 +16,8 @@ public class RacingGameController {
     }
 
     private void inputCarName(){
+        RacingGameUi.printNameInputMsg();
+
         try{
             racingInfo.setCarList(readLine());
         }catch(UserInputException e){
@@ -23,6 +26,8 @@ public class RacingGameController {
     }
 
     private void inputLoopCnt(){
+        RacingGameUi.printLoopCntInputMsg();
+
         try{
             racingInfo.setLoopCnt(readLine());
         }catch(UserInputException e){
