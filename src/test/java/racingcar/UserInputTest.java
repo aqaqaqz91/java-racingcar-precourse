@@ -3,6 +3,7 @@ package racingcar;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
@@ -27,6 +28,17 @@ class UserInputTest extends NsTest {
         assertSimpleTest(
                 () -> {
                     runException(input);
+                    assertThat(output()).contains(ERROR_MESSAGE);
+                }
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource(value ={"1,2:a", "1,2:-5"}, delimiter = ':')
+    void 시도_횟수_입력의_유효성체크(String name, String cnt) {
+        assertSimpleTest(
+                () -> {
+                    runException(name, cnt);
                     assertThat(output()).contains(ERROR_MESSAGE);
                 }
         );
